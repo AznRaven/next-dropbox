@@ -1,13 +1,14 @@
 import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
 export default function Home() {
   return (
     <main>
-      <div>
+      <div className="flex flex-col lg:flex-row items-center bg-[#2b2929] dark:bg-slate-800">
         <div className="p-10 flex flex-col bg-[#2b2929] dark:bg-slate-800 text-white space-y-5">
-          <h1>
+          <h1 className="text-5xl font-bold">
             Welcome to Dropbox Clone
             <br />
             <br />
@@ -22,10 +23,23 @@ export default function Home() {
             management and sharing—all within a single, secure, and centralized
             solution."
           </p>
-          <Link href="/dashboard">Try it for free!</Link>
+          <Link
+            href="/dashboard"
+            className="flex cursor-pointer bg-blue-500 p-5 w-fit"
+          >
+            Try it for free!
+            <ArrowRight className="ml-10" />
+          </Link>
+        </div>
+        <div className="bg-[#1e1919] dark:bg-slate-800 h-full p-10">
+          <video autoPlay loop muted className="rounded-lg">
+            <source
+              src="https://aem.dropbox.com/cms/content/dam/dropbox/warp/en-us/dropbox/dbx1-hero-1920x1080.mp4"
+              type="video/mp4"
+            />
+          </video>
         </div>
       </div>
-      <h1>Dropbox Clone</h1>
       <p className="text-center font-bold text-xl pt-5">Disclaimer</p>
       <p className="text-center font-light p-2">
         "This site is created solely for informational and educational purposes.
