@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
+import toast, { Toaster } from 'react-hot-toast';
+
 
 import Nav from "./(components)/Nav";
 import { ThemeProvider } from "./(components)/ThemeProvider";
@@ -30,6 +32,8 @@ export default function RootLayout({
           >
             <Nav />
             {children}
+            <Toaster />
+
           </ThemeProvider>
         </body>
       </html>

@@ -12,6 +12,8 @@ import {
 import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
 import { useState } from "react";
 import DropzoneC from "react-dropzone";
+import toast, { Toaster } from "react-hot-toast";
+
 
 const DropZone = () => {
   const [loading, setLoading] = useState(false);
@@ -35,6 +37,8 @@ const DropZone = () => {
     if (!user) return;
 
     setLoading(true);
+    const toastId = toast.loading("Uploading...");
+
 
     // do stuff
     // addDoc => users/[id]/files
@@ -59,6 +63,8 @@ const DropZone = () => {
     });
 
     setLoading(false);
+    toast.success("Uploaded Successful!", { id: toastId });
+
   };
   // max file size = 20MB
   const maxSize = 20971520;
